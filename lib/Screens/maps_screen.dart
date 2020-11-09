@@ -85,8 +85,11 @@ class _MapsScreenState extends State<MapsScreen> {
           },
         ),
       ),
-      bottomNavigationBar: NavBar(
-        selectedIndex: 1,
+      bottomNavigationBar: Hero(
+        tag: "Nav",
+              child: NavBar(
+          selectedIndex: 1,
+        ),
       ),
     );
   }

@@ -30,8 +30,11 @@ class _AboutUsState extends State<AboutUs> {
           ],
         ),
       ),
-      bottomNavigationBar: NavBar(
-        selectedIndex: 2,
+      bottomNavigationBar: Hero(
+        tag: "Nav",
+              child: NavBar(
+          selectedIndex: 2,
+        ),
       ),
     );
   }

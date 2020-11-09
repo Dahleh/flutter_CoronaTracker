@@ -81,6 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
     showSpinner = true;
     var weatherData = await data.getAllNumbers('countries');
     var worldData = await data.getWorldNumbers('all');
+    list.clear();
     setState(() {
       for (var item in weatherData) {
         Country country = Country(
@@ -113,8 +114,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       key: key,
       appBar: buildBar(context),
-      bottomNavigationBar: NavBar(
-        selectedIndex: 0,
+      bottomNavigationBar: Hero(
+        tag: "Nav",
+              child: NavBar(
+          selectedIndex: 0,
+        ),
       ),
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
